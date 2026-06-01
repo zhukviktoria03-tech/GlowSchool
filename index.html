@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlowSchool — Онлайн курси по догляду за шкірою обличчя</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container">
+    <div class="header__wrapper">
+      <a href="#" class="logo">Glow<span>School</span></a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#about"   class="nav__link">Про нас</a></li>
+          <li><a href="#courses" class="nav__link">Курси</a></li>
+          <li><a href="#reviews" class="nav__link">Відгуки</a></li>
+          <li><a href="#contact" class="nav__link">Контакти</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="auth-area" id="authArea">
+          <button class="btn--auth-outline" id="openLoginBtn">Увійти</button>
+          <button class="btn--auth-fill"    id="openRegisterBtn">Реєстрація</button>
+        </div>
+        <div class="user-info" id="userArea" style="display:none;">
+          <div class="user-info__avatar" id="userAvatar">А</div>
+          <span class="user-info__name"  id="userName">Ім'я</span>
+          <button class="btn--logout"    id="logoutBtn">Вийти</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" title="Тема">☀️</button>
+        <button class="burger"       id="burger"      aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu__list">
+    <li><a href="#about"   class="mobile-menu__link">Про нас</a></li>
+    <li><a href="#courses" class="mobile-menu__link">Курси</a></li>
+    <li><a href="#reviews" class="mobile-menu__link">Відгуки</a></li>
+    <li><a href="#contact" class="mobile-menu__link">Контакти</a></li>
+  </ul>
+  <div class="mobile-menu__auth" id="mobileAuthArea">
+    <button class="btn--auth-outline" id="mobileLoginBtn">Увійти</button>
+    <button class="btn--auth-fill"    id="mobileRegisterBtn">Реєстрація</button>
+  </div>
+  <div class="user-info" id="mobileUserArea" style="display:none; margin-top:20px;">
+    <div class="user-info__avatar" id="mobileUserAvatar">А</div>
+    <span class="user-info__name"  id="mobileUserName">Ім'я</span>
+    <button class="btn--logout"    id="mobileLogoutBtn">Вийти</button>
+  </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero__wrapper">
+      <div class="hero__content">
+        <span class="hero__eyebrow">✦ Онлайн навчання</span>
+        <h1 class="hero__title">
+          Шкіра, що<br />
+          <em>сяє</em> — починається<br />
+          тут
+        </h1>
+        <p class="hero__text">
+          Персональні курси по догляду за шкірою обличчя від сертифікованих косметологів.
+          Визначте свій тип шкіри, підберіть рутину і отримайте результат вже за кілька тижнів.
+        </p>
+        <div class="hero__buttons">
+          <a href="#courses" class="btn btn--primary">Переглянути курси</a>
+          <a href="#about"   class="btn btn--secondary">Дізнатися більше</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <div class="hero__stat-number">500+</div>
+            <div class="hero__stat-text">студентів</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number">3</div>
+            <div class="hero__stat-text">програми</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number">98%</div>
+            <div class="hero__stat-text">задоволені</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__card-main">
+          <div class="hero__card-img">
+            <img src="https://www.chesterwellnesscentre.co.uk/wp-content/uploads/2023/08/Essentials-of-Skin-Care.jpg" alt="Догляд за шкірою обличчя" />
+          </div>
+          <div class="hero__features">
+            <div class="hero__feature">
+              <div class="hero__feature-icon">•</div>
+              <div class="hero__feature-text">Підбір засобів під ваш тип шкіри</div>
+            </div>
+            <div class="hero__feature">
+              <div class="hero__feature-icon">•</div>
+              <div class="hero__feature-text">Робота з проблемними зонами</div>
+            </div>
+            <div class="hero__feature">
+              <div class="hero__feature-icon">•</div>
+              <div class="hero__feature-text">Персональні рекомендації</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section__header animate">
+      <span class="section__subtitle">Як це працює</span>
+      <h2 class="section__title">Чотири кроки до сяючої шкіри</h2>
+      <p class="section__text">Простий і зрозумілий процес, який підійде як новачкам, так і тим, хто вже знайомий з доглядом.</p>
+    </div>
+    <div class="steps__grid">
+      <div class="step-card animate animate--delay-1">
+        <span class="step-card__num">01</span>
+        <div class="step-card__icon">
+          <img src="https://images.pexels.com/photos/8875503/pexels-photo-8875503.jpeg" alt="Реєстрація" />
+        </div>
+        <h3 class="step-card__title">Реєстрація</h3>
+        <p class="step-card__text">Створіть акаунт за кілька секунд і отримайте доступ до курсів.</p>
+      </div>
+      <div class="step-card animate animate--delay-2">
+        <span class="step-card__num">02</span>
+        <div class="step-card__icon">
+          <img src="https://images.pexels.com/photos/3747120/pexels-photo-3747120.jpeg" alt="Оберіть курс" />
+        </div>
+        <h3 class="step-card__title">Оберіть курс</h3>
+        <p class="step-card__text">Виберіть програму, яка відповідає вашим потребам та бюджету.</p>
+      </div>
+      <div class="step-card animate animate--delay-3">
+        <span class="step-card__num">03</span>
+        <div class="step-card__icon">
+          <img src="https://images.pexels.com/photos/7011396/pexels-photo-7011396.jpeg" alt="Навчайтесь" />
+        </div>
+        <h3 class="step-card__title">Навчайтесь</h3>
+        <p class="step-card__text">Проходьте заняття у зручний для вас час та у власному темпі.</p>
+      </div>
+      <div class="step-card animate animate--delay-1">
+        <span class="step-card__num">04</span>
+        <div class="step-card__icon">
+          <img src="https://media.istockphoto.com/id/1473203340/photo/face-beauty-and-satisfaction-with-a-model-black-woman-in-studio-on-a-gray-background-to.jpg?b=1&s=612x612&w=0&k=20&c=03ibmNP5V01ZSgJ68hn2NAjsBJ4ohDdY2-3VdGVUygo=" alt="Результат" />
+        </div>
+        <h3 class="step-card__title">Результат</h3>
+        <p class="step-card__text">Отримайте здорову, сяючу шкіру та впевненість у собі.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section courses" id="courses">
+  <div class="container">
+    <div class="section__header animate">
+      <span class="section__subtitle">Програми навчання</span>
+      <h2 class="section__title">Оберіть свій курс</h2>
+      <p class="section__text">Три програми для будь-якого рівня підготовки та потреб вашої шкіри.</p>
+    </div>
+    <div class="courses__grid">
+
+      
+      <div class="course-card animate animate--delay-1">
+         
+        <div class="course-card__photo">
+          <img src="https://plus.unsplash.com/premium_photo-1679046948909-ab47e96082e7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNraW58ZW58MHx8MHx8fDA%3D" alt="Basic Care" />
+        </div>
+        <div class="course-card__content">
+          <span class="course-card__badge">Початковий</span>
+          <h3 class="course-card__title">Basic Care</h3>
+          <p class="course-card__subtitle">Ідеально для початку та правильного домашнього догляду</p>
+          <ul class="course-card__list">
+            <li>Визначення типу шкіри</li>
+            <li>Базова рутина догляду</li>
+            <li>Підбір засобів</li>
+          </ul>
+          <div class="course-card__meta">
+            <span class="course-card__meta-item">📅 3 заняття</span>
+          </div>
+          <div class="course-card__footer">
+            <div class="course-card__price">1 000 <span>грн</span></div>
+            <button class="btn btn--primary" onclick="openPayment('Basic Care','🌿','1 000 грн',1000)">Оформити</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card course-card--featured animate animate--delay-2">
+        <div class="course-card__photo">
+          <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpbnxlbnwwfHwwfHx8MA%3D%3D" alt="Glow Course" />
+        </div>
+        <div class="course-card__content">
+          <span class="course-card__badge">Поглиблений</span>
+          <h3 class="course-card__title">Glow Course</h3>
+          <p class="course-card__subtitle">Поглиблений догляд для сяючої та здорової шкіри</p>
+          <ul class="course-card__list">
+            <li>Все з Basic Care</li>
+            <li>Робота з висипаннями, сухістю чи жирністю</li>
+            <li>SPF, сироватки, кислоти при потребі</li>
+            <li>Персональні рекомендації</li>
+          </ul>
+          <div class="course-card__meta">
+            <span class="course-card__meta-item">📅 7 занять</span>
+          </div>
+          <div class="course-card__footer">
+            <div class="course-card__price">3 100 <span>грн</span></div>
+            <button class="btn btn--primary" onclick="openPayment('Glow Course','✨','3 100 грн',3100)">Оформити</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card animate animate--delay-3">
+        <div class="course-card__photo">
+          <img src="https://plus.unsplash.com/premium_photo-1683140815244-7441fd002195?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2tpbnxlbnwwfHwwfHx8MA%3D%3D" alt="Premium Skin" />
+        </div>
+        <div class="course-card__content">
+          <span class="course-card__badge">Преміум</span>
+          <h3 class="course-card__title">Premium Skin</h3>
+          <p class="course-card__subtitle">Повний індивідуальний супровід</p>
+          <ul class="course-card__list">
+            <li>Аналіз шкіри</li>
+            <li>Персональний план догляду</li>
+            <li>Розбір косметики</li>
+            <li>Підтримка та консультації</li>
+          </ul>
+          <div class="course-card__meta">
+            <span class="course-card__meta-item">📅 10 занять</span>
+          </div>
+          <div class="course-card__footer">
+            <div class="course-card__price">7 000 <span>грн</span></div>
+            <button class="btn btn--primary" onclick="openPayment('Premium Skin','💎','7 000 грн',7000)">Оформити</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section__header animate">
+      <span class="section__subtitle">Відгуки</span>
+      <h2 class="section__title">Що кажуть наші студенти</h2>
+    </div>
+    <div class="testimonials__grid">
+      <div class="testimonial animate animate--delay-1">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">Пройшла Basic Care — нарешті зрозуміла свій тип шкіри! Вже через 2 тижні помітила значне покращення. Дуже рекомендую всім, хто тільки починає.</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120" alt="Аліна К." />
+          </div>
+          <div>
+            <div class="testimonial__name">Аліна К.</div>
+            <div class="testimonial__role">Basic Care</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial animate animate--delay-2">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">Glow Course — це просто магія! Нарешті розібралась з висипаннями та підібрала правильні засоби. Шкіра стала рівною та сяючою. Дякую!</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=120" alt="Марія Т." />
+          </div>
+          <div>
+            <div class="testimonial__name">Марія Т.</div>
+            <div class="testimonial__role">Glow Course</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial animate animate--delay-3">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">Premium Skin — найкраща інвестиція в себе! Індивідуальний підхід, детальний аналіз і постійна підтримка. Шкіра помолодшала на кілька років!</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">
+            <img src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=120" alt="Олена В." />
+          </div>
+          <div>
+            <div class="testimonial__name">Олена В.</div>
+            <div class="testimonial__role">Premium Skin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-banner animate">
+      <h2 class="cta-banner__title">Готові почати шлях до сяючої шкіри?</h2>
+      <p class="cta-banner__text">Приєднуйтесь до сотень студентів, які вже змінили свою шкіру на краще.Перший крок — реєстрація.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn--primary"   id="ctaRegisterBtn">Зареєструватись безкоштовно</button>
+        <a      class="btn btn--secondary" href="#courses">Переглянути курси</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <a href="#" class="logo">Glow<span>School</span></a>
+      <nav class="footer__nav">
+        <a href="#about">Про нас</a>
+        <a href="#courses">Курси</a>
+        <a href="#reviews">Відгуки</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+      <p class="footer__copy">© 2025 GlowSchool. Всі права захищені.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="go-top" id="goTop" title="Нагору">↑</button>
+
+<div class="modal" id="authModal">
+  <div class="modal__content">
+    <button class="modal__close" id="authModalClose">✕</button>
+    <h2 class="modal__title"    id="authModalTitle">Вхід</h2>
+    <p  class="modal__subtitle" id="authModalSubtitle">Раді бачити вас знову 👋</p>
+    <div class="modal__tabs">
+      <button class="modal__tab active" id="tabLogin">Увійти</button>
+      <button class="modal__tab"        id="tabRegister">Реєстрація</button>
+    </div>
+    <div class="modal__form active" id="loginForm">
+      <div class="form__group">
+        <label class="form__label">Email</label>
+        <input  class="form__input" type="email"    id="loginEmail"    placeholder="example@mail.com" />
+        <span   class="form__error"                 id="loginEmailErr">Невірний формат email</span>
+      </div>
+      <div class="form__group">
+        <label class="form__label">Пароль</label>
+        <input  class="form__input" type="password" id="loginPassword" placeholder="Ваш пароль" />
+        <span   class="form__error"                 id="loginPasswordErr">Невірний email або пароль</span>
+      </div>
+      <button class="form__submit" onclick="handleLogin()">Увійти</button>
+    </div>
+    <div class="modal__form" id="registerForm">
+      <div class="form__group">
+        <label class="form__label">Ім'я</label>
+        <input  class="form__input" type="text"     id="regName"     placeholder="Ваше ім'я" />
+        <span   class="form__error"                 id="regNameErr">Введіть ім'я (мін. 2 символи)</span>
+      </div>
+      <div class="form__group">
+        <label class="form__label">Email</label>
+        <input  class="form__input" type="email"    id="regEmail"    placeholder="example@mail.com" />
+        <span   class="form__error"                 id="regEmailErr">Некоректний email (потрібна @ та крапка після неї)</span>
+      </div>
+      <div class="form__group">
+        <label class="form__label">Пароль</label>
+        <input  class="form__input" type="password" id="regPassword" placeholder="Мін. 6 символів" />
+        <span   class="form__error"                 id="regPasswordErr">Пароль повинен містити мін. 6 символів</span>
+      </div>
+      <button class="form__submit" onclick="handleRegister()">Зареєструватись</button>
+    </div>
+  </div>
+</div>
+
+<!-- , -->
+
+<div class="modal" id="payModal">
+  <div class="modal__content" style="max-width:480px;">
+    <button class="modal__close" id="payModalClose">✕</button>
+    <div id="payFormScreen">
+      <h2 class="modal__title">Оформлення покупки</h2>
+      <p  class="modal__subtitle">Заповніть дані для оплати</p>
+      <div class="pay-modal__course-info">
+        <div class="pay-modal__course-icon" id="payIcon">✨</div>
+        <div>
+          <div class="pay-modal__course-name"  id="payCourseName">Glow Course</div>
+          <div class="pay-modal__course-price" id="payCoursePrice">3 100 грн</div>
+        </div>
+      </div>
+      <div class="form__group">
+        <label class="form__label">Ім'я на картці</label>
+        <input  class="form__input" type="text" id="payCardName" placeholder="ВАШЕ ІМ'Я" />
+        <span   class="form__error"             id="payCardNameErr">Введіть ім'я власника картки</span>
+      </div>
+      <div class="form__group">
+        <label class="form__label">Номер картки</label>
+        <input  class="form__input" type="text" id="payCardNumber" placeholder="0000 0000 0000 0000" maxlength="19" />
+        <span   class="form__error"             id="payCardNumberErr">Введіть 16-значний номер картки</span>
+      </div>
+      <div class="pay-row">
+        <div class="form__group">
+          <label class="form__label">Термін дії</label>
+          <input  class="form__input" type="text"     id="payExpiry" placeholder="ММ/РР" maxlength="5" />
+          <span   class="form__error"                 id="payExpiryErr">Формат ММ/РР</span>
+        </div>
+        <div class="form__group">
+          <label class="form__label">CVV</label>
+          <input  class="form__input" type="password" id="payCvv" placeholder="•••" maxlength="3" />
+          <span   class="form__error"                 id="payCvvErr">3 цифри</span>
+        </div>
+      </div>
+      <div class="pay-modal__divider"></div>
+      <div class="pay-modal__total">
+        <span class="pay-modal__total-label">До сплати:</span>
+        <span class="pay-modal__total-price" id="payTotalPrice">3 100 грн</span>
+      </div>
+      <button class="form__submit" onclick="handlePayment()">💳 Оплатити</button>
+    </div>
+    <div class="success-screen" id="successScreen">
+      <div class="success-screen__icon">🎉</div>
+      <h2 class="success-screen__title">Оплата успішна!</h2>
+      <p class="success-screen__text">
+        Вітаємо! Ви успішно придбали курс <strong id="successCourseName"></strong>.
+        Деталі надіслано на вашу пошту.
+      </p>
+      <button class="btn btn--primary" style="margin-top:28px;width:100%;" onclick="closeModal('payModal')">Чудово!</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
